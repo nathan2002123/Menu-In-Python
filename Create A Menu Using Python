@@ -1,0 +1,46 @@
+def menu():
+    # made the input menu_choice global so i can use it in the function person
+    global menu_choice
+    # menu list print the avaliable menu options
+    menu_list = 'Coffee, Tea, Sweets, Hot-Dogs'
+    print(menu_list)
+    menu_choice = input("Choose your option. / Type Here >> ")
+
+    # if user input isnt matching it will ask again
+    while menu_choice != 'Coffee' and menu_choice != 'coffee' and menu_choice != 'Tea' and menu_choice != 'tea' and menu_choice != 'Sweets' and menu_choice != 'sweets' and menu_choice != 'Hot-Dogs' and menu_choice != 'Hot Dogs' and menu_choice != 'hot dogs':
+        print(menu_list)
+        menu_choice = input("Sorry InVaild Option, Select Again / Type Here >> ")
+    else:
+        print("Thank You, Your order will be ready soon")
+
+def person():
+    print("While we wait lets get to know each other")
+    print("Do you want to get to know each other (Yes/No)")
+    answer = input('Type here >> ')
+    
+    # if user input isnt matching it will ask again
+    while answer != 'Yes' and answer != 'yes' and answer != 'y' and answer != 'No' and answer != 'no' and answer != 'n':
+        print("InValid Answer")
+        answer = input('Type Here >> ')
+    
+    # all the questions that will be asking the user
+    if answer == 'Yes' or answer == 'yes' or answer == 'y':
+        print('So what do you do for a living')
+        living = input('Type Here >>' )
+        print(f'Thats cool, How did you become / achive being a {living}')
+        living_2 = input("Type Here >> ")
+        print("Thats Cool")
+        print('So whats your favorite Tea')
+        tea = input('Type Here >> ')
+        print('Thats Insteresting, mine is Green Tea')
+        print(f'Speaking about Tea, Your {menu_choice} are ready!! ')
+        print(f'Thank You, Have a great Day and enjoy your {menu_choice}')
+    else:
+        # if user input was no (pass = end,  and not ask any questions) 
+        print("I understand")
+        print(f'Your {menu_choice} is ready')
+        print(f'Thank You, Have a great day, Enjoy your {menu_choice}')
+        pass
+# these are to run both functions
+menu()
+person()
